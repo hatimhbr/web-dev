@@ -1,14 +1,138 @@
 	<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
+		<style>
+			*{margin:0px; padding:0px; font-family:Helvetica, Arial, sans-serif;}
+			
+			/* Full-width input fields */
+			input[type=text], input[type=password] {
+				width: 90%;
+				padding: 12px 20px;
+				margin: 8px 26px;
+				display: inline-block;
+				border: 1px solid #ccc;
+				box-sizing: border-box;
+				font-size:16px;
+			}
+			
+			/* Set a style for all buttons */
+			button {
+				background-color: #FDB700;
+				color: white;
+				padding: 14px 20px;
+				margin: 8px 26px;
+				border: none;
+				cursor: pointer;
+				width: 75%;
+				font-size:20px;
+				
+			}
+			button:hover {
+				opacity: 0.8;
+			}
+			
+			/* Center the image and position the close button */
+			.imgcontainer {
+				text-align: center;
+				margin: 24px 0 12px 0;
+				position: relative;
+			}
+			.avatar {
+				width: 200px;
+				height:200px;
+				border-radius: 50%;
+			}
+			
+			/* The Modal (background) */
+			.modal {
+				display:none;
+				position: fixed;
+				z-index: 1;
+				left: 50%;
+				top: 50%;
+				width: 50%;
+				height: 100%;
+				margin: 15px 26px;
+				transform: translate(50%, -5%);
+				overflow: auto;
+				background-color: rgba(0,0,0,0.4);
+			}
+			
+			/* Modal Content Box */
+			.modal-content {
+				background-color: #fefefe;
+				margin: 4% auto 15% auto;
+				border: 1px solid #888;
+				width: 40%; 
+				padding-bottom: 30px;
+			}
+			
+			/* The Close Button (x) */
+			.close {
+				position: absolute;
+				right: 25px;
+				top: 0;
+				color: #000;
+				font-size: 35px;
+				font-weight: bold;
+			}
+			.close:hover,.close:focus {
+				color: red;
+				cursor: pointer;
+			}
+			
+			/* Add Zoom Animation */
+			.animate {
+				animation: zoom 0.6s
+			}
+			@keyframes zoom {
+				from {transform: scale(0)} 
+				to {transform: scale(1)}
+			}
+			</style>
+<div id="modal-wrapper" class="modal" >
+  
+	<form class="modal-content animate" action="/action_page.php">
+		  
+	  <div class="imgcontainer">
+		<span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+		<img src="img/1.png" alt="Avatar" class="avatar" style="margin: 10px auto">
+		<h4 style="text-align:center">Sign In / Sign Up</h4>
+	  </div>
+  
+	  <div class="container">
+		<input type="text" placeholder="Enter Username" name="uname">
+		<input type="password" placeholder="Enter Password" name="psw">        
+		<button type="submit" style="display: block; margin: 0 auto">Login</button>
+		<button type="submit" style="display: block; margin: 10px auto">Sign Up</button>
+		<input type="checkbox" style="margin:26px 30px;"> Remember me      
+		<a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
+	  </div>
+	  
+	</form>
+	
+  </div>
+  
+  <script>
+  // If user clicks anywhere outside of the modal, Modal will close
+  
+  var modal = document.getElementById('modal-wrapper');
+  window.onclick = function(event) {
+	  if (event.target == modal) {
+		  modal.style.display = "none";
+	  }
+  }
+  </script>
+  
+
 	<head>
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Favicon-->
 		<link rel="shortcut icon" href="img/fav.png">
 		<!-- Author Meta -->
-		<meta name="author" content="codepixer">
+		<meta name="author" content="Hatim">
 		<!-- Meta Description -->
-		<meta name="description" content="">
+		<meta name="description" content="Accent Grafix">
 		<!-- Meta Keyword -->
 		<meta name="keywords" content="">
 		<!-- meta character set -->
@@ -51,7 +175,8 @@
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="index.html">Home</a></li>
 				          <li><a href="about.html">About</a></li>
-				          <li><a href="services.html">Service</a></li>
+						  <li><a href="services.html">Service</a></li>
+						  <li><a href="products.html">Products</a></li>
 				          <li><a href="contact.html">Contact</a></li>
 			              <li><a href="elements.html">Request Quote</a></li>
 				        </ul>
@@ -73,7 +198,7 @@
 							<p class="text-white">
 								Distributors and Manufacturers in Stainless Steel Polished, Matte, ElectoPolished Tubes, FIttings and Valves.
 							</p>
-							<a href="#" class="primary-btn header-btn text-uppercase">Get Started</a>
+							<a href="#"  class="primary-btn header-btn text-uppercase" onclick="document.getElementById('modal-wrapper').style.display='block'">Get Started</a>
 						</div>												
 					</div>
 				</div>
